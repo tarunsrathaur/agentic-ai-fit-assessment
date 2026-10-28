@@ -75,3 +75,4 @@ The recommendation logic is deliberately heuristic and transparent. It looks for
 ## License
 
 MIT. See `LICENSE`.
+Website deployment refresh — October 2026
