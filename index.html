@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="A technology-agnostic assessment to help architects decide when agentic AI is justified—and when a simpler architecture is better.">
+  <meta name="theme-color" content="#101827">
+  <title>Agentic AI Fit Assessment | Architecture Decision Tool</title>
+  <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#assessment">Skip to assessment</a>
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="#" aria-label="Agentic AI Fit Assessment home">
+        <span class="brand-mark">A<span>+</span></span>
+        <span>Architecture Field Guide</span>
+      </a>
+      <a class="nav-link" href="#method">How it works</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow"><span class="eyebrow-dot"></span> TECHNOLOGY-AGNOSTIC DECISION TOOL</p>
+          <h1>Does this use case<br><em>need an agent?</em></h1>
+          <p class="hero-intro">Assess whether a business problem merits agentic AI—or whether deterministic automation or an LLM-enhanced workflow is the more reliable fit.</p>
+          <div class="hero-pills">
+            <span>Industry agnostic</span><span>Stack agnostic</span><span>Privacy-first by default</span>
+          </div>
+        </div>
+        <aside class="principle-card">
+          <div class="principle-icon">↗</div>
+          <p class="card-kicker">THE ARCHITECTURE PRINCIPLE</p>
+          <h2>Use the least complex architecture that reliably achieves the outcome.</h2>
+          <p>Agency is a design choice—not a goal in itself. Add it only when dynamic decisions and feedback-driven actions create measurable value.</p>
+          <div class="principle-line"></div>
+          <p class="card-foot">A decision aid, not a certification or substitute for architecture review.</p>
+        </aside>
+      </div>
+    </section>
+
+    <section class="container assessment-section" id="assessment">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">01 / ASSESS THE USE CASE</p>
+          <h2>Start with the problem, not the model.</h2>
+          <p class="muted">Answer what you know. “Partially” and unanswered items are valid; revisit them during discovery.</p>
+        </div>
+        <div class="progress-wrap" aria-live="polite">
+          <div class="progress-label"><span id="progress-text">0 of 24 answered</span><span id="progress-percent">0%</span></div>
+          <div class="progress-track"><div id="progress-bar" class="progress-bar"></div></div>
+        </div>
+      </div>
+
+      <div class="assessment-layout">
+        <div id="question-sections" class="question-sections"></div>
+        <aside class="assessment-aside">
+          <div class="aside-sticky">
+            <p class="card-kicker">YOUR ASSESSMENT</p>
+            <div class="mini-stat"><strong id="aside-answered">0</strong><span>criteria answered</span></div>
+            <div class="mini-stat"><strong id="aside-gaps">0</strong><span>control gaps marked “No”</span></div>
+            <p class="aside-note">The recommendation considers patterns across criteria. A raw score alone cannot determine whether an agent is appropriate.</p>
+            <button id="review-button" class="button button-primary button-full">Generate assessment</button>
+            <button id="reset-button" class="button button-quiet button-full">Reset answers</button>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section id="results" class="container results-section hidden" aria-live="polite">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">02 / ARCHITECTURE GUIDANCE</p>
+          <h2>Your preliminary fit assessment</h2>
+          <p class="muted">Use this as a starting point for an architecture conversation—not an automatic approval.</p>
+        </div>
+        <div class="result-actions">
+          <button id="download-button" class="button button-secondary">Download report</button>
+          <button id="copy-button" class="button button-secondary">Copy summary</button>
+        </div>
+      </div>
+      <div id="result-content"></div>
+    </section>
+
+    <section class="container method-section" id="method">
+      <p class="eyebrow">03 / THE DECISION MODEL</p>
+      <h2>Choose the right level of autonomy.</h2>
+      <p class="muted method-intro">Tool count and workflow complexity are not the same as agentic behavior. Look for dynamic choices, goal-directed steps, and adaptation to intermediate results.</p>
+      <div class="pattern-grid">
+        <article class="pattern-card">
+          <div class="pattern-number">01</div><h3>Deterministic workflow</h3>
+          <p>Known steps, explicit rules, and predictable outcomes. Use conventional automation when it is sufficient.</p>
+          <div class="pattern-footer">Best when the path is known</div>
+        </article>
+        <article class="pattern-card">
+          <div class="pattern-number">02</div><h3>LLM-enhanced workflow</h3>
+          <p>A controlled process with targeted language understanding, extraction, classification, or generation.</p>
+          <div class="pattern-footer">Best when some steps need interpretation</div>
+        </article>
+        <article class="pattern-card">
+          <div class="pattern-number">03</div><h3>Bounded agentic workflow</h3>
+          <p>The system selects permitted next actions, observes results, and adapts its path toward a defined goal.</p>
+          <div class="pattern-footer">Best when the path must adapt</div>
+        </article>
+        <article class="pattern-card">
+          <div class="pattern-number">04</div><h3>Agent with human approval</h3>
+          <p>Dynamic investigation or recommendations with approval gates for consequential or irreversible actions.</p>
+          <div class="pattern-footer">Best when autonomy needs oversight</div>
+        </article>
+      </div>
+    </section>
+
+    <section class="container feedback-section" id="feedback">
+      <div class="feedback-card">
+        <div>
+          <p class="eyebrow">HELP IMPROVE THIS TOOL</p>
+          <h2>Was this assessment useful?</h2>
+          <p class="muted">Feedback is optional. Nothing is sent unless you actively consent and submit. Do not include confidential or personal information.</p>
+        </div>
+        <form id="feedback-form">
+          <label for="feedback-rating">How useful was it?</label>
+          <select id="feedback-rating" required>
+            <option value="">Choose a rating</option>
+            <option value="5">5 — Very useful</option>
+            <option value="4">4 — Useful</option>
+            <option value="3">3 — Somewhat useful</option>
+            <option value="2">2 — Not very useful</option>
+            <option value="1">1 — Not useful</option>
+          </select>
+          <label for="feedback-note">What should improve? (optional)</label>
+          <textarea id="feedback-note" rows="3" maxlength="500" placeholder="Keep feedback general. Do not share business-sensitive details."></textarea>
+          <label class="consent-row"><input id="feedback-consent" type="checkbox"> <span>I consent to sending this feedback, including my rating and optional comment, to the configured feedback service.</span></label>
+          <button class="button button-primary" type="submit">Submit optional feedback</button>
+          <p id="feedback-status" class="form-status" role="status"></p>
+          <p class="tiny muted">Feedback submission is disabled until the site owner configures an endpoint in <code>assets/config.js</code>. No analytics or cookies are enabled by default.</p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div><strong>Agentic AI Fit Assessment</strong><p>Architecture judgment before architecture fashion.</p></div>
+      <div class="footer-links"><a href="#assessment">Take assessment</a><a href="#method">Decision model</a><a href="README.md">About this project</a></div>
+    </div>
+  </footer>
+  <script src="assets/config.js"></script>
+  <script src="assets/app.js"></script>
+</body>
+</html>
